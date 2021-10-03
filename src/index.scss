@@ -54,6 +54,7 @@ body {
 
 .liRight {
   margin-left: 30PX;
+  cursor: pointer;
 
   img {
     margin-right: 15px;
@@ -65,59 +66,10 @@ body {
   padding: 40px;
 }
 
-.contentH {
-
-
-}
-
-.card {
-  background-color: #f8f8f8;
-  text-align: center;
-  border: 1px solid #f8f8f8;
-  padding: 20px;
-  width: 200px;
-  height: 300px;
-  border-radius: 10px;
-  margin-right: 30px;
-  transition: box-shadow 0.2s ease-in-out, tranform 0.2s ease-in-out;
-
-
-  &:hover {
-    box-shadow: 0 14px 30px rgb(154, 80, 44);
-    transform: translateY(-5px);
-  }
-
-  span {
-    font-size: 13px;
-    opacity: 0.5;
-    text-transform: uppercase;
-  }
-
-  b {
-    font-size: 14px;
-  }
-}
-
-.cartImg {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-}
-
-.button {
-  background-color: #ffffff;
-  border: 1px solid #f2f2f2;
-  box-sizing: border-box;
-  border-radius: 8px;
-  height: 20px;
-  width: 20px;
-  cursor: pointer;
-}
-
 .oll {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+
 }
 
 .content-search {
@@ -163,6 +115,8 @@ body {
 
 
 .drawer {
+  display: flex;
+  flex-direction: column;
   position: absolute;
   width: 320px;
   height: 100%;
@@ -171,15 +125,16 @@ body {
   box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
   padding: 30px;
   overflow: auto;
-
+  .items {
+    flex: 1;
+    margin-right: 30px;
+  }
 
   h2 {
     margin: 0 0 40px ;
     display: flex;
     justify-content: space-between;
- img {
-   margin-right: 30px;
- }
+
   }
 
 }
