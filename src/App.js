@@ -6,6 +6,7 @@ import Header from "./components/Header/Header";
 import Drawer from "./components/Drawer/Drawer";
 import Favorites from "./pages/Favorits";
 import AppContext from './context';
+import Orders from "./pages/Orders";
 
 
 
@@ -26,7 +27,7 @@ function App() {
         async function fetchData() {
             const cartResponse = await   axios.get('https://6159deec601e6f0017e5a326.mockapi.io/card')
             const favoritesResponse = await axios.get('https://6159deec601e6f0017e5a326.mockapi.io/favorites');
-            const itemsResponse = await  axios.get('https://6159deec601e6f0017e5a326.mockapi.io/title')
+            const itemsResponse = await  axios.get('https://6159deec601e6f0017e5a326.mockapi.io/items')
 
             setIsLoading(false)
 
@@ -102,6 +103,11 @@ function App() {
             <Route path="/favorites" exact>
                 <Favorites onAddToFavorite={onAddToFavorite} />
             </Route>
+
+            <Route path="orders" exact>
+                <Orders />
+            </Route>
+
         </div>
         </AppContext.Provider>
     );
