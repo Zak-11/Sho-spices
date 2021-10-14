@@ -2,12 +2,13 @@ import React from "react";
 import Info from "../Info";
 import axios from "axios";
 import {useCart} from "../../hook/useCart";
+import styles from './Drawer.module.scss';
 
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 
-function Index({ onClose, onRemove, items = [] }) {
+function Drawer({ onClose, onRemove, items = [] ,opened}) {
     const { cartItems, setCartItems, totalPrice } = useCart();
     const [orderId, setOrderId] = React.useState(null);
     const [isOrderComplete, setIsOrderComplete] = React.useState(false);
@@ -25,7 +26,7 @@ function Index({ onClose, onRemove, items = [] }) {
 
             for (let i = 0; i < cartItems.length; i++) {
                 const item = cartItems[i];
-                await axios.delete('https://6159deec601e6f0017e5a326.mockapi.io/card' + item.id);
+                await axios.delete('https://6159deec601e6f0017e5a326.mockapi.io/card/' + item.id);
                 await delay(1000);
             }
         } catch (error) {
@@ -35,14 +36,15 @@ function Index({ onClose, onRemove, items = [] }) {
     };
 
     return (
-        <div className="overlay">
+        <div className={`${styles.overlay} ${opened ? styles.overlayVisible : ''}`}>
+            <div className={styles.drawer}>
             <div className="drawer">
 
                 <h2 className="d-flex justify-between mb-30">
                     Cart <img
                                  onClick={onClose}
                                  className="cu-p"
-                                 width={20} height={20} src='/img/rem.svg'
+                                 width={20} height={20} src='img/rem.svg'
                                  alt="Close"/>
                 </h2>
 
@@ -64,7 +66,7 @@ function Index({ onClose, onRemove, items = [] }) {
                                         onClick={() => onRemove(obj.id)}
                                         className="removeBtn"
                                         width={20} height={20}
-                                        src='/img/rem.svg'
+                                        src='img/rem.svg'
                                         alt="Remove"
                                     />
                                 </div>
@@ -82,11 +84,11 @@ function Index({ onClose, onRemove, items = [] }) {
                                 <li>
                                     <span>Tax 5%:</span>
 
-                                    <b>{(totalPrice / 100) * 5} руб. </b>
+                                    <b>{(totalPrice / 100) * 5} $ </b>
                                 </li>
                             </ul>
                             <button disabled={isLoading} onClick={onClickOrder} className="greenButton">
-                                Checkout<img src='/img/arr.svg' alt='arro'/>
+                                Checkout<img src='img/arr.svg' alt='arro'/>
                             </button>
                         </div>
                     </div>
@@ -108,7 +110,8 @@ function Index({ onClose, onRemove, items = [] }) {
                 )}
             </div>
         </div>
+            </div>
     );
 };
 
-export default Index;
+export default Drawer;
