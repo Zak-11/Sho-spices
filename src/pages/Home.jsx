@@ -28,7 +28,7 @@ function Home ({items,
     return(
         <div className="content p-40">
             <div className="d-flex align-center justify-between mb-40">
-                <h1>{searchValue ? `Поиск по запросу: "${searchValue}"` : `All spices`}</h1>
+                <h1>{searchValue ? `Search by request: "${searchValue}"` : `All spices`}</h1>
                 <div className="search-block d-flex">
                         <img width={30} height={30}
                             src='/img/zom.svg'

@@ -1,5 +1,5 @@
 import React from "react";
-import Info from "../info";
+import Info from "../Info";
 import axios from "axios";
 import {useCart} from "../../hook/useCart";
 
@@ -7,7 +7,7 @@ import {useCart} from "../../hook/useCart";
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 
-function Drawer({ onClose, onRemove, items = [] }) {
+function Index({ onClose, onRemove, items = [] }) {
     const { cartItems, setCartItems, totalPrice } = useCart();
     const [orderId, setOrderId] = React.useState(null);
     const [isOrderComplete, setIsOrderComplete] = React.useState(false);
@@ -29,7 +29,7 @@ function Drawer({ onClose, onRemove, items = [] }) {
                 await delay(1000);
             }
         } catch (error) {
-            alert('Ошибка при создании заказа :(');
+            alert('Error while creating order :(');
         }
         setIsLoading(false);
     };
@@ -39,7 +39,7 @@ function Drawer({ onClose, onRemove, items = [] }) {
             <div className="drawer">
 
                 <h2 className="d-flex justify-between mb-30">
-                    Корзина <img
+                    Cart <img
                                  onClick={onClose}
                                  className="cu-p"
                                  width={20} height={20} src='/img/rem.svg'
@@ -75,18 +75,18 @@ function Drawer({ onClose, onRemove, items = [] }) {
                         <div className="cartTotalBlock">
                             <ul>
                                 <li>
-                                    <span>Итого:</span>
+                                    <span>Total:</span>
 
-                                    <b>{totalPrice} руб. </b>
+                                    <b>{totalPrice} $ </b>
                                 </li>
                                 <li>
-                                    <span>Налог 5%:</span>
+                                    <span>Tax 5%:</span>
 
                                     <b>{(totalPrice / 100) * 5} руб. </b>
                                 </li>
                             </ul>
                             <button disabled={isLoading} onClick={onClickOrder} className="greenButton">
-                                Оформить заказ<img src='/img/arr.svg' alt='arro'/>
+                                Checkout<img src='/img/arr.svg' alt='arro'/>
                             </button>
                         </div>
                     </div>
@@ -95,13 +95,13 @@ function Drawer({ onClose, onRemove, items = [] }) {
 
                 ) : (
                     <Info
-                    title={isOrderComplete ? 'Заказ оформлен!' : 'Корзина пустая'}
+                    title={isOrderComplete ? 'Order is processed!' : 'Cart is empty'}
                     description={
                     isOrderComplete
-                    ? `Ваш заказ #${orderId} скоро будет передан курьерской доставке`
-                    : 'Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ.'
+                    ? `Your${orderId}  order will be delivered by courier soon`
+                    : 'Add at least one product to order.'
                 }
-                    image={isOrderComplete ? '/img/ord.jpg' : '/img//img/box.jpg'}
+                    image={isOrderComplete ? '/img/ord.jpg' : '/img/box.jpg'}
                     />
 
 
@@ -111,4 +111,4 @@ function Drawer({ onClose, onRemove, items = [] }) {
     );
 };
 
-export default Drawer;
+export default Index;

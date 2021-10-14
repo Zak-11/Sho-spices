@@ -2,9 +2,10 @@ import React from 'react';
 import axios from 'axios';
 
 import Card from '../components/Card';
-
+import AppContext from '../context';
 
 function Orders() {
+    const { onAddToFavorite, onAddToCart } = React.useContext(AppContext);
     const [orders, setOrders] = React.useState([]);
     const [isLoading, setIsLoading] = React.useState(true);
 
@@ -15,7 +16,7 @@ function Orders() {
                 setOrders(data.reduce((prev, obj) => [...prev, ...obj.items], []));
                 setIsLoading(false);
             } catch (error) {
-                alert('Ошибка при запросе заказов');
+                alert('Error while requesting orders');
                 console.error(error);
             }
         })();
@@ -24,7 +25,7 @@ function Orders() {
     return (
         <div className="content p-40">
             <div className="d-flex align-center justify-between mb-40">
-                <h1>Мои заказы</h1>
+                <h1>My orders</h1>
             </div>
 
             <div className="d-flex flex-wrap">

@@ -2,10 +2,11 @@ import axios from "axios";
 import React from "react";
 import {Route} from "react-router-dom";
 import Home from "./pages/Home";
-import Header from "./components/Header/Header";
-import Drawer from "./components/Drawer/Drawer";
+import Index from "./components/Drawer";
 import Favorites from "./pages/Favorits";
 import AppContext from './context';
+
+import Header from "./components/Header";
 import Orders from "./pages/Orders";
 
 
@@ -64,7 +65,7 @@ function App() {
                   setFavorites((prev) => [...prev, data]);
               }
           } catch (error) {
-              alert('Не удалось добавить в фавориты');
+              alert('Failed to add to favorites');
           }
       };
     const onChangeSearchInput = (event) => {
@@ -80,9 +81,9 @@ function App() {
         <AppContext.Provider value={{items, cartItems, favorites,  isItemAdded,onAddToFavorite, setCartOpened, setCartItems }}>
         <div className="wrapper clear">
             {cartOpened && (
-                <Drawer items={cartItems}
-                        onClose={() => setCartOpened(false)}
-                        onRemove={onRemoveItem} />
+                <Index items={cartItems}
+                       onClose={() => setCartOpened(false)}
+                       onRemove={onRemoveItem} />
             )}
             <Header onClickCart={() => setCartOpened(true)} />
 
