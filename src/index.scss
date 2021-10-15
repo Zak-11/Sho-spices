@@ -10,7 +10,7 @@ body {
 }
 
 .wrapper {
-  background: #d9d6d6;
+  background: #ffffff;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.04);
   border-radius: 20px;
   max-width: 1080px;
@@ -73,7 +73,7 @@ header {
   position: relative;
   .clear {
     position: absolute;
-    right: 0;
+
     width: 18px;
     height: 18px;
     top: 14px;
@@ -154,6 +154,8 @@ header {
       background-repeat: no-repeat;
       margin-right: 20px;
     }
+
+
     p {
       font-size: 16px;
       margin: 0;
