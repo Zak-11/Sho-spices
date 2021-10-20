@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/Sho-spices/static/css/main.68078cba.chunk.css",
-    "main.js": "/Sho-spices/static/js/main.93c6d7a3.chunk.js",
-    "main.js.map": "/Sho-spices/static/js/main.93c6d7a3.chunk.js.map",
+    "main.css": "/Sho-spices/static/css/main.2a933991.chunk.css",
+    "main.js": "/Sho-spices/static/js/main.b01d33b1.chunk.js",
+    "main.js.map": "/Sho-spices/static/js/main.b01d33b1.chunk.js.map",
     "runtime-main.js": "/Sho-spices/static/js/runtime-main.728c764b.js",
     "runtime-main.js.map": "/Sho-spices/static/js/runtime-main.728c764b.js.map",
     "static/css/2.1cdcfe91.chunk.css": "/Sho-spices/static/css/2.1cdcfe91.chunk.css",
@@ -10,14 +10,14 @@
     "static/js/2.1ed147ff.chunk.js.map": "/Sho-spices/static/js/2.1ed147ff.chunk.js.map",
     "index.html": "/Sho-spices/index.html",
     "static/css/2.1cdcfe91.chunk.css.map": "/Sho-spices/static/css/2.1cdcfe91.chunk.css.map",
-    "static/css/main.68078cba.chunk.css.map": "/Sho-spices/static/css/main.68078cba.chunk.css.map",
+    "static/css/main.2a933991.chunk.css.map": "/Sho-spices/static/css/main.2a933991.chunk.css.map",
     "static/js/2.1ed147ff.chunk.js.LICENSE.txt": "/Sho-spices/static/js/2.1ed147ff.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.728c764b.js",
     "static/css/2.1cdcfe91.chunk.css",
     "static/js/2.1ed147ff.chunk.js",
-    "static/css/main.68078cba.chunk.css",
-    "static/js/main.93c6d7a3.chunk.js"
+    "static/css/main.2a933991.chunk.css",
+    "static/js/main.b01d33b1.chunk.js"
   ]
 }
