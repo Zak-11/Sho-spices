@@ -130,7 +130,7 @@ function App() {
             />
             <Header onClickCart={() => setCartOpened(true)} />
 
-            <Route path=" " exact>
+            <Route path="" exact>
                 <Home
                     items={items}
                     cartItems={cartItems}

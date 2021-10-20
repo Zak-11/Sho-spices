@@ -103,7 +103,7 @@ function Drawer({ onClose, onRemove, items = [] ,opened}) {
                     ? `Your${orderId}  order will be delivered by courier soon`
                     : 'Add at least one product to order.'
                 }
-                    image={isOrderComplete ? '/img/ord.jpg' : '/img/box.jpg'}
+                    image={isOrderComplete ? 'img/ord.jpg' : 'img/box.jpg'}
                     />
 
 
@@ -112,6 +112,6 @@ function Drawer({ onClose, onRemove, items = [] ,opened}) {
         </div>
             </div>
     );
-};
+}
 
 export default Drawer;
